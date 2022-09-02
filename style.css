@@ -4,18 +4,30 @@
     box-sizing: content-box;
 }
 
+:root {
+    --text-color: #fffffe;
+    --bg-color: #16161a;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: #16161a;
+        --bg-color: #fffffe;
+    }
+}
+
 body {
-    background-color: #16161a;
-    color: #fffffe;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: sans-serif;
 }
 
 a {
-    color: #fffffe;
+    color: var(--text-color);
     text-decoration: none;
 }
 
-.intro-container {
+.container {
     max-width: 1040px;
     margin: 0px auto;
     padding: 50px 20px;
@@ -50,7 +62,7 @@ nav {
 
 .hero-content h1 {
     font-size: 56px;
-    color: #fffffe;
+    color: var(--text-color);
     margin-bottom: 16px;
 }
 
@@ -63,7 +75,7 @@ nav {
 .hero-content button {
     padding: 19px 32px;
     font-size: 18px;
-    color: #fffffe;
+    color: var(--text-color);
     border: none;
     border-radius: 3px;
     background-color: #7f5af0;
@@ -73,4 +85,37 @@ nav {
     width: 80%;
     max-width: 550px;
     height: auto;
+    background-color: var(--color);
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #222;
+
+    flex: 1 0 400px;
+    padding: 30px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.card-header-square {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+
+.card p {
+    color: #94a1b2;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
 }
